@@ -1,0 +1,298 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdd835;
+  color: #333;
+}
+
+/* Botão de áudio (música tema) */
+#play-theme-btn {
+  position: fixed;
+  top: 1rem;  
+  right: 1rem;
+  background-color: #fdd835; 
+  color: #222; 
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  z-index: 999;
+}
+
+#play-theme-btn:hover {
+  background-color: #fbc02d; 
+  transform: scale(1.05);
+}
+
+#play-theme-btn:active {
+  transform: scale(0.95);
+}
+
+/* Cabeçalho */
+header {
+  background-image: url('./src/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to bottom, transparent, #fdd835);
+}
+
+header p {
+  color: black;
+}
+
+/* Seção principal */
+main {
+  padding: 2rem;
+}
+
+.titulo-main {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.titulo-main h1 {
+  font-family: 'Luckiest Guy', cursive;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  display: inline-block;
+  font-size: 4rem;
+  color: #5dc3ff;
+  -webkit-text-stroke: 2px #595656;
+}
+
+/* Carrossel */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 1rem;
+  scroll-behavior: smooth;
+}
+
+/* Cards */
+.character-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  height: 350px;
+  flex: 0 0 calc(25% - 1rem);
+  padding: 15px;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.character-card:hover {
+  transform: scale(1.05);
+}
+
+.character-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background-color: #eee;
+  border-radius: 6px;
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h3 {
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+/* Coração */
+.heart {
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  color: transparent;
+  -webkit-text-stroke: 1.2px #f44336;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.heart.filled {
+  color: #f44336;
+  -webkit-text-stroke: 0;
+  animation: beat 0.3s ease;
+  text-shadow: 0 0 8px rgba(244, 67, 54, 0.5);
+}
+
+@keyframes beat {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.5); }
+  100% { transform: scale(1.2); }
+}
+
+/* Descrição do personagem */
+.card-description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow-y: auto;
+  max-height: 100px;
+  margin-top: 0.5rem;
+  padding-right: 5px;
+}
+
+/* Botões de navegação do carrossel */
+.carousel-button {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background-color: #fdd835;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 10px;
+  color: #333;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#prev {
+  left: 0;
+}
+#next {
+  right: 0;
+}
+
+/* Indicadores (bolinhas) */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.indicator-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: #bbb;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator-btn.active {
+  background-color: #333;
+}
+
+/* Botão de favoritar personagens */
+#favorites-toggle {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background-color: #fdd835;
+  color: #222;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.2rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+
+#favorites-toggle:hover {
+  background-color: #fbc02d;
+  transform: scale(1.05);
+}
+
+
+/* Rodapé */
+footer {
+  background-color: #fdd835;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer p {
+  color: #333;
+  padding-bottom: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .character-card {
+    flex: 0 0 calc(33.333% - 1rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .character-card {
+    flex: 0 0 calc(50% - 1rem);
+  }
+
+  .carousel-button {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .character-card {
+    flex: 0 0 100%;
+  }
+
+  .carousel-button {
+    font-size: 1.2rem;
+    padding: 0.3rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
