@@ -175,7 +175,7 @@ main {
   padding-right: 5px;
 }
 
-/* Botões de navegação do carrossel */
+/* Botões de navegação do carrossel 
 .carousel-button {
   position: absolute;
   top: 40%;
@@ -196,7 +196,7 @@ main {
 }
 #next {
   right: 0;
-}
+}*/
 
 /* Indicadores (bolinhas) */
 .carousel-indicators {
