@@ -44,7 +44,7 @@ body {
 /* Cabeçalho */
 header {
   background-image: url('./src/banner.jpg');
-  background-size: cover;
+  background-size: 80% auto;
   background-position: center;
   height: 600px;
   padding: 2rem;
